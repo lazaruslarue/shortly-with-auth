@@ -1,13 +1,26 @@
 <h2>Main</h2>
 
 <table>
-  <tr ng-repeat="link in links track by link.id">
-    <td >
-      <a class="link" ng-href="{{link.base_url}}/{{link.code}}">{{link.base_url}}/{{link.code}}</a>
-    </td>
-    <td class="original">{{ link.title }}</td>
-    <td class="info"> {{link.info}}</td>
-    <td class="link visits">{{link.url}}</td>
-    <td class="count">Visits: {{ link.visits }}</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>
+      <a href="" ng-click="predicate='visits'; reverse=!reverse ">visits!</a></th>
+      <th>
+      <a href="" ng-click="predicate='code'; reverse=!reverse ">notnecessarilyshortened</a></th>
+      <th>
+      <a href="" ng-click="predicate='title'; reverse=!reverse ">title</a></th>
+      <th>
+      <a href="" ng-click="predicate='url'; reverse=!reverse ">original</a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="link in links | orderBy:predicate:reverse">
+      <td class="count">{{ link.visits }}</td>
+      <td >
+        <a class="link" ng-href="{{link.base_url}}/{{link.code}}">{{link.base_url}}/{{link.code}}</a>
+      </td>
+      <td class="original">{{ link.title }}</td>
+      <td class="link visits">{{link.url}}</td>
+    </tr>
+  </tbody>
 </table>

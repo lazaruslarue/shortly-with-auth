@@ -19,9 +19,10 @@ angular.module('shortlyApp')
       url: '/links',
       data: {url: this.text}
     })
-     .then(function(data){
-      console.info('data ', arguments)
+     .success(function(){
+      $scope.text = '';
      }) 
     };
+
   })
   
