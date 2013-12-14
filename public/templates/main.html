@@ -1,10 +1,12 @@
 <h2>Main</h2>
 <!-- <pre>{{links | json}}</pre> -->
 <ul>
-  <li ng-repeate="link in links track by link.id">
-  <a ng-href="{{links.url}}/{{links.code}} " >
-  <h4>{{ link.title }}</h4>b
-  <span>{{ link.visits }} </span>
+  <li ng-repeat="link in links track by link.id">
+  <a ng-href="{{link.url}}" >
+    <h4>{{ link.title }}</h4>
+    <span> {{link.url}} </span>
+  </a>
+  <h4>Visits: {{ link.visits }} </h4>
   </a>
   </li>
 </ul>

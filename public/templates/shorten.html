@@ -1,5 +1,6 @@
 <h2>Shorten</h2>
-<form ng-submit="createLink()">
-  <input type="text"  >
-  <button type="submit" ng-model="button"></button>
-</form>
+<form name="myform" ng-submit="submit()" >
+  Enter your url to shorten: </br>
+  <input type="text" ng-model="text" name="teext" />
+  <input type="submit" id="submit" value="Submit"/>
+</form >
