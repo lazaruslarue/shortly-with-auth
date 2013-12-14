@@ -1,11 +1,13 @@
 <h2>Main</h2>
-<!-- <pre>{{links | json}}</pre> -->
+
 <table>
   <tr ng-repeat="link in links track by link.id">
-    <td><a ng-href="{{link.base_url}}/{{link.code}}">{{link.base_url}}/{{link.code}}</a></td>
+    <td >
+      <a class="link" ng-href="{{link.base_url}}/{{link.code}}">{{link.base_url}}/{{link.code}}</a>
+    </td>
     <td class="original">{{ link.title }}</td>
     <td class="info"> {{link.info}}</td>
-    <td class="link"> {{link.url}}</td>
+    <td class="link visits">{{link.url}}</td>
     <td class="count">Visits: {{ link.visits }}</td>
   </tr>
 </table>
