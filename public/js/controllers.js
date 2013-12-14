@@ -10,12 +10,23 @@ angular.module('shortlyApp')
       $scope.links = data.data;
       // console.info(data.data)
     })
+    // $scope.clickCount = function($scope, $http){
+    //   $http({
+    //   method: 'POST',
+    //   url: '/links',
+    //   data: {url: this.text}
+
+    // })
+    //  .then(function(data){
+    //   console.info('data ', arguments)
+    //   // console.log(data, ' that data, wow!')
+    //  }) 
+    // }
   })
   .controller('ShortenController', function($scope, $http){
     $scope.name='Shorten';
     $scope.text='balls';
     $scope.submit = function() {
-      console.log(this.text);
       $http({
       method: 'POST',
       url: '/links',
